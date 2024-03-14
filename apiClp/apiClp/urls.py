@@ -17,10 +17,16 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from myapp import views
+from . import views
 
 router = DefaultRouter()
 router.register(r'status', views.StatusViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('', views.index, name='index'),
 ]
+
+
+    
+
